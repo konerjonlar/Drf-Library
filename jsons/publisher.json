@@ -1,0 +1,20 @@
+[
+{
+  "model": "muni_content.publisher",
+  "pk": 1,
+  "fields": {
+    "name": "kırmızı kedi",
+    "city": "ankara",
+    "year": 2010
+  }
+},
+{
+  "model": "muni_content.publisher",
+  "pk": 2,
+  "fields": {
+    "name": "baska",
+    "city": "aydın",
+    "year": 2020
+  }
+}
+]

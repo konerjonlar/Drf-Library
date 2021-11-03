@@ -1,0 +1,26 @@
+[
+{
+  "model": "muni_content.category",
+  "pk": 1,
+  "fields": {
+    "name": "korku",
+    "slug": "korku"
+  }
+},
+{
+  "model": "muni_content.category",
+  "pk": 2,
+  "fields": {
+    "name": "komedi",
+    "slug": "komedi"
+  }
+},
+{
+  "model": "muni_content.category",
+  "pk": 3,
+  "fields": {
+    "name": "polisiye",
+    "slug": "polisiye"
+  }
+}
+]

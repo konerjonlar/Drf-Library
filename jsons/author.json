@@ -1,0 +1,24 @@
+[
+{
+  "model": "muni_content.author",
+  "pk": 1,
+  "fields": {
+    "first_name": "ahmet",
+    "last_name": "muhip",
+    "age": 35,
+    "phone": "1048971048571",
+    "address": "wwjrflwsjfpo pjkpdfjkaeprfjkpe"
+  }
+},
+{
+  "model": "muni_content.author",
+  "pk": 2,
+  "fields": {
+    "first_name": "orhan",
+    "last_name": "pamuk",
+    "age": 54,
+    "phone": "14135487139",
+    "address": "ahfhalfhjlwqewelflro welrf jwel rflwhf lwrhflhwaslfhj"
+  }
+}
+]
