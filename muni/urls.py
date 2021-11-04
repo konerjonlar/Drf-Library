@@ -13,8 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from auth.api.urls import auth_router
 from content.api.urls import content_router
-from content.api.views import BookSearch
 from django.conf import settings
 from django.conf.urls import url
 from django.conf.urls.static import static
@@ -31,12 +31,11 @@ from rest_framework_jwt.views import (
 
 router = routers.DefaultRouter()
 router.registry.extend(content_router.registry)
+router.registry.extend(auth_router.registry)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
-    path("api/search/", BookSearch.as_view(), name="postsearch"),
-    path("log/", include("auth.api.urls")),
     path("api/favourite/", include("favourite.api.urls", namespace="favourite")),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     path(
@@ -48,4 +47,3 @@ urlpatterns = [
     url(r"^api-token-refresh/", refresh_jwt_token),
     url(r"^api-token-verify/", verify_jwt_token),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-#   "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjM2MDIxODAwLCJlbWFpbCI6IiJ9._hyWeFE5K1dNvVfG-_A-skxV-hpDcPq4SHChHgWsNMs

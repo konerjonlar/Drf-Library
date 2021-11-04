@@ -15,6 +15,8 @@ class BookViewSet(ModelViewSet):
     queryset = Book.objects.filter(is_active=True)
     serializer_class = BookSerializer
     lookup_field = "slug"
+    filter_backends = [filters.SearchFilter]
+    search_fields = ("^title",)
 
     def get_serializer_class(self):
         if self.action == "create":
@@ -41,11 +43,3 @@ class PublisherViewSet(
 class CommentCreateViewSet(mixins.CreateModelMixin, GenericViewSet):
     serializer_class = CommentCreateSerializer
     queryset = Comment.objects.filter(is_active=True)
-
-
-class BookSearch(generics.ListAPIView):
-    permission_classes = [permissions.AllowAny]
-    queryset = Book.objects.all()
-    serializer_class = BookSerializer
-    filter_backends = [filters.SearchFilter]
-    search_fields = ["^slug"]

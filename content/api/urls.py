@@ -1,6 +1,5 @@
 from content.api.views import (
     AuthorViewSet,
-    BookSearch,
     BookViewSet,
     CommentCreateViewSet,
     PublisherViewSet,

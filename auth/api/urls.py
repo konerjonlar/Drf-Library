@@ -1,6 +1,5 @@
-from django.contrib import admin
-from django.urls import path
-from django.conf.urls import include
-urlpatterns = [
-path('auth/', include('rest_auth.urls')),
-]
+from auth.api.views import UserCreateViewSet
+from rest_framework.routers import SimpleRouter
+
+auth_router = SimpleRouter()
+auth_router.register("profiles/create", UserCreateViewSet, basename="profile")
