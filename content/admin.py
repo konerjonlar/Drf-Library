@@ -12,7 +12,10 @@ class AuthorAdmin(admin.ModelAdmin):
     )
     list_editable = ("phone",)
     list_filter = ("first_name",)
-    search_fields = ("author__full_name",)
+    search_fields = (
+        "first_name",
+        "last_name",
+    )
 
 
 @admin.register(Publisher)

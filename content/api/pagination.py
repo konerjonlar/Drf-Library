@@ -7,4 +7,4 @@ class SmallPagination(PageNumberPagination):
 
 class LargePagination(PageNumberPagination):
     page_size = 25
-    page_query_param = 'sayfa'
+    page_query_param = "sayfa"

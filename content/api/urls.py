@@ -1,9 +1,11 @@
 from content.api.views import (
     AuthorViewSet,
+    BookSearch,
     BookViewSet,
     CommentCreateViewSet,
     PublisherViewSet,
 )
+from django.urls import path
 from rest_framework.routers import SimpleRouter
 
 content_router = SimpleRouter()

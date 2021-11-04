@@ -7,7 +7,7 @@ from content.api.serializers import (
     PublisherSerializer,
 )
 from content.models import Author, Book, Comment, Publisher
-from rest_framework import mixins, permissions
+from rest_framework import filters, generics, mixins, permissions
 from rest_framework.viewsets import GenericViewSet, ModelViewSet
 
 
@@ -41,3 +41,11 @@ class PublisherViewSet(
 class CommentCreateViewSet(mixins.CreateModelMixin, GenericViewSet):
     serializer_class = CommentCreateSerializer
     queryset = Comment.objects.filter(is_active=True)
+
+
+class BookSearch(generics.ListAPIView):
+    permission_classes = [permissions.AllowAny]
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ["^slug"]

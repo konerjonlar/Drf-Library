@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from content.api.urls import content_router
+from content.api.views import BookSearch
 from django.conf import settings
 from django.conf.urls import url
 from django.conf.urls.static import static
@@ -34,6 +35,7 @@ router.registry.extend(content_router.registry)
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
+    path("api/search/", BookSearch.as_view(), name="postsearch"),
     path("log/", include("auth.api.urls")),
     path("api/favourite/", include("favourite.api.urls", namespace="favourite")),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
