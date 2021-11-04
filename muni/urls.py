@@ -13,11 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
-from rest_framework import routers
-
 from content.api.urls import content_router
+from django.conf.urls import url
+from django.contrib import admin
+from django.urls import include, path
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from rest_framework import routers
+from rest_framework.authtoken.views import obtain_auth_token
+from rest_framework_jwt.views import (
+    obtain_jwt_token,
+    refresh_jwt_token,
+    verify_jwt_token,
+)
 
 router = routers.DefaultRouter()
 router.registry.extend(content_router.registry)
@@ -26,4 +33,14 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
     path("log/", include("auth.api.urls")),
+    path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
+    path(
+        "api/schema/swagger-ui/",
+        SpectacularSwaggerView.as_view(url_name="schema"),
+        name="swagger-ui",
+    ),
+    url(r"^api-token-auth/", obtain_jwt_token),
+    url(r"^api-token-refresh/", refresh_jwt_token),
+    url(r"^api-token-verify/", verify_jwt_token),
 ]
+#   "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjM2MDIxODAwLCJlbWFpbCI6IiJ9._hyWeFE5K1dNvVfG-_A-skxV-hpDcPq4SHChHgWsNMs

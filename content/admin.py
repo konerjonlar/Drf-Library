@@ -5,22 +5,55 @@ from content.models import Author, Book, Category, Comment, Publisher
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        "first_name",
+        "last_name",
+        "phone",
+    )
+    list_editable = ("phone",)
+    list_filter = ("first_name",)
+    search_fields = ("author__full_name",)
 
 
 @admin.register(Publisher)
 class PublisherAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        "name",
+        "city",
+        "year",
+    )
+    list_filter = (
+        "name",
+        "city",
+        "year",
+    )
+    search_fields = (
+        "name",
+        "city",
+        "year",
+    )
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        "name",
+        "slug",
+    )
+    list_filter = ("name",)
+    search_fields = ("name",)
 
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("book", "from_user", "is_active")
+    search_fields = ("book", "from_user", "created_at", "is_active")
+    list_per_page = 30
+    list_filter = (
+        "book",
+        "from_user",
+        "created_at",
+    )
 
 
 @admin.register(Book)
@@ -35,3 +68,4 @@ class BookAdmin(admin.ModelAdmin):
         "score",
         "is_active",
     )
+    list_per_page = 30

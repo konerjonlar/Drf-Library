@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "auth",
     "content",
+    "django_filters",
     "rest_framework",
     "rest_framework.authtoken",
     "rest_auth",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -139,4 +141,12 @@ REST_FRAMEWORK = {
     #     "rest_framework.authentication.SessionAuthentication",
     #     "rest_framework.authentication.BasicAuthentication",
     # ),
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+# TODO
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Your Project API",
+    "DESCRIPTION": "Your project description",
+    "VERSION": "1.0.0",
 }
