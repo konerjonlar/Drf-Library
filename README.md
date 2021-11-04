@@ -1,4 +1,4 @@
-# Book Blog Rest Api Project 
+# MUNI Interview Project
 <a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="Powered by Django." title="Powered by Django." /></a>
 <img src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SW-logo-clr.png" height="50" align="right">  
 <a href="https://github.com/python/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
@@ -10,7 +10,7 @@ The first thing to do is to clone the repository:
 
 ```sh
 $ git clone https://github.com/konerjonlar/muni/
-$ cd sample-django-app
+$ cd muni
 ```
 
 Create a virtual environment to install dependencies in and activate it:
