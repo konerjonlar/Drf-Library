@@ -21,6 +21,7 @@ $ source venvName/bin/activate
 Then install the dependencies:
 
 ```sh
+(env)$pip install poetry
 (env)$ poetry install
 ```
 Note the `(env)` in front of the prompt. This indicates that this terminal
