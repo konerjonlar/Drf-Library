@@ -12,6 +12,7 @@ from rest_framework.viewsets import GenericViewSet, ModelViewSet
 
 
 class BookViewSet(ModelViewSet):
+    throttle_scope = "registerthrottle"
     queryset = Book.objects.filter(is_active=True)
     serializer_class = BookSerializer
     lookup_field = "slug"
@@ -27,6 +28,7 @@ class BookViewSet(ModelViewSet):
 
 
 class AuthorViewSet(mixins.CreateModelMixin, mixins.UpdateModelMixin, GenericViewSet):
+    throttle_scope = "registerthrottle"
     serializer_class = AuthorSerializer
     queryset = Author.objects.all()
     permission_classes = (permissions.IsAuthenticated,)
@@ -35,11 +37,13 @@ class AuthorViewSet(mixins.CreateModelMixin, mixins.UpdateModelMixin, GenericVie
 class PublisherViewSet(
     mixins.CreateModelMixin, mixins.UpdateModelMixin, GenericViewSet
 ):
+    throttle_scope = "registerthrottle"
     serializer_class = PublisherSerializer
     queryset = Publisher.objects.all()
     permission_classes = (permissions.IsAuthenticated,)
 
 
 class CommentCreateViewSet(mixins.CreateModelMixin, GenericViewSet):
+    throttle_scope = "registerthrottle"
     serializer_class = CommentCreateSerializer
     queryset = Comment.objects.filter(is_active=True)
