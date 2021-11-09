@@ -8,20 +8,20 @@
 The first thing to do is to clone the repository:
 
 
-```sh
-$ git clone https://github.com/konerjonlar/drf-rest-api/
+$```sh
+git clone https://github.com/konerjonlar/drf-rest-api/
 ```
-```sh
-$ cd drf-rest-api
+$```sh
+cd drf-rest-api
 ```
 
 Create a virtual environment to install dependencies in and activate it:
 
 ```sh
-$ python3 -m venv venvName
+python3 -m venv venvName
 ```
 ```sh
-$ source venvName/bin/activate
+source venvName/bin/activate
 ```
 
 Then install the dependencies:
