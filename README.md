@@ -8,10 +8,10 @@
 The first thing to do is to clone the repository:
 
 
-$```sh
+$ ```sh
 git clone https://github.com/konerjonlar/drf-rest-api/
 ```
-$```sh
+$ ```sh
 cd drf-rest-api
 ```
 
