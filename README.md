@@ -9,14 +9,18 @@ The first thing to do is to clone the repository:
 
 
 ```sh
-$ git clone https://github.com/konerjonlar/muni/
-$ cd muni
+$ git clone https://github.com/konerjonlar/drf-rest-api/
+```
+```sh
+$ cd drf-rest-api
 ```
 
 Create a virtual environment to install dependencies in and activate it:
 
 ```sh
 $ python3 -m venv venvName
+```
+```sh
 $ source venvName/bin/activate
 ```
 
@@ -24,6 +28,8 @@ Then install the dependencies:
 
 ```sh
 (env)$pip install poetry
+```
+```sh
 (env)$ poetry install
 ```
 Note the `(env)` in front of the prompt. This indicates that this terminal
@@ -32,6 +38,8 @@ session operates in a virtual environment set up by `venvName`.
 Once `pip` has finished downloading the dependencies:
 ```sh
 (env)$ cd muni
+```
+```sh
 (env)$ python manage.py runserver
 ```
 And navigate to `http://127.0.0.1:8000/`.
