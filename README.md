@@ -8,10 +8,10 @@
 The first thing to do is to clone the repository:
 
 
-$ ```sh
+```sh
 git clone https://github.com/konerjonlar/drf-rest-api/
 ```
-$ ```sh
+```sh
 cd drf-rest-api
 ```
 
@@ -27,7 +27,7 @@ source venvName/bin/activate
 Then install the dependencies:
 
 ```sh
-(env)$pip install poetry
+(env)$ pip install poetry
 ```
 ```sh
 (env)$ poetry install
