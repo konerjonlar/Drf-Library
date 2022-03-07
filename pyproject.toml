@@ -6,7 +6,7 @@ authors = ["orhan <orhancansu98@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-Django = "^3.2.9"
+Django = "^3.2.12"
 djangorestframework = "^3.12.4"
 django-filter = "^21.1"
 django-taggit = "^1.5.1"
